@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 
 const errorController = require('./controllers/error');
 const sequelize = require('./util/database');
@@ -10,6 +11,8 @@ const Song = require('./models/song');
 const Album = require('./models/album');
 const Playlist = require('./models/playlist');
 const PlaylistSong = require('./models/playlist-song');
+
+const upload = multer({ dest: 'uploads/' })
 
 const app = express();
 

@@ -15,9 +15,12 @@ const Song = sequelize.define('song', {
     },
     duriation: {
         type: Sequelize.DOUBLE,
+    },
+    filename: {
+        type: Sequelize.STRING,
         allowNull: false
     },
-    audio: {
+    filetype: {
         type: Sequelize.STRING,
         allowNull: false
     }
