@@ -3,7 +3,13 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const errorController = require('./controllers/error.js');
+const errorController = require('./controllers/error');
+const sequelize = require('./util/database');
+const User = require('./models/user');
+const Song = require('./models/song');
+const Album = require('./models/album');
+const Playlist = require('./models/playlist');
+const PlaylistSong = require('./models/playlist-song');
 
 const app = express();
 
@@ -18,5 +24,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(browseRoutes);
 app.use('/profile', profileRoutes);
+
 app.use(errorController.get404);
-app.listen(3000);
+
+Song.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
+User.hasMany(Song);
+User.hasMany(Playlist);
+Playlist.belongsTo(User);
+Playlist.belongsToMany(Song, { through: PlaylistSong });
+Song.belongsToMany(Playlist, { through: PlaylistSong });
+User.hasMany(Album);
+Album.belongsTo(User);
+Album.hasMany(Song);
+Song.belongsTo(Album);
+
+sequelize
+    // .sync({ force: true })
+    .sync()
+    .then(() => app.listen(3000));
