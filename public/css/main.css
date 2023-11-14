@@ -4,8 +4,9 @@ body {
   color: #e6eed6;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-h1 {
-  margin-left: 3%;
+h1, h2 {
+  /* margin-left: 3%; */
+  text-align: center;
 }
 footer {
   position: fixed;
@@ -13,7 +14,7 @@ footer {
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: #222829;
+  background-color: #1f2525;
   text-align: center;
   height: 50px;
 }
@@ -49,4 +50,45 @@ footer {
     background-color: #f2bac9;
     color: #7798ab;
     border: 1px solid #222829;
+    width: 98px;
+}
+
+.sidebar {
+    width: 25%;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    background-color: #222829;
+    padding-top: 5%;
+}
+
+.sidebar_albumCover {
+    width: 90%;
+    padding-left: 5%;
+}
+
+.sidebar_audio {
+    padding-top: 2%;
+    text-align: center;
+}
+
+.sidebar_audioButton {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background-color: white;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+#openSidebarButton {
+    float: right;
+}
+
+#closeSidebarButton {
+    float: right;
+}
+
+.mainContent {
+    margin-right: 25%;
 }
