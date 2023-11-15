@@ -23,6 +23,9 @@ const Song = sequelize.define('song', {
     filetype: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    albumPosition: {
+        type: Sequelize.INTEGER
     }
 });
 

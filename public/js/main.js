@@ -6,7 +6,7 @@ const toggleSidebar = () => {
         sidebar.style.display = "none";
         openSidebarButton.style.display = "block";
         sidebarActive = false;
-        main.style.marginRight = "0%";
+        main.style.marginRight = "5%";
     } else {
         sidebar.style.display = "block";
         openSidebarButton.style.display = "none";

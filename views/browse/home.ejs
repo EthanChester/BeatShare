@@ -6,6 +6,32 @@
     <%- include('../includes/audio_player.ejs') %>
     <div class="mainContent">
         <h1>Home</h1>
+        <% if (songs.length > 0) { %>
+            <% let n = 0 %>
+            <% for (let song of songs) { %>
+                <div class="song_card">
+                    <h3 class="song_title"><%= song.title %></h3>
+                    <form action="javascript:playSong('<%= song.title %>', '<%= song.filename %>', '<%= song.filetype %>', '<%= song.id %>')">
+                        <button type="submit">Play</button>
+                    </form>
+                </div>
+                <% n++ %>
+            <% } %>
+        <% } else { %>
+            <h2>No songs found</h2>
+        <% } %>
+        <% if (albums.length > 0) { %>
+            <% let n = 0 %>
+            <% for (let album of albums) { %>
+                <div>
+                    <h3><%= album.title %></h3>
+                    <img src="./uploads/<%= album.image %>" alt="<%= album.title %>" width="200px">
+                </div>
+                <% n++ %>
+            <% } %>
+        <% } else { %>
+            <h2>No albums found</h2>
+        <% } %>
     </div>
 
 <%- include('../includes/footer.ejs') %>

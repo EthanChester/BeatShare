@@ -91,4 +91,10 @@ footer {
 
 .mainContent {
     margin-right: 25%;
+    margin-left: 5%;
+}
+
+#addSongReleaseImage {
+  display: inline-block;
+  text-align: center;
 }

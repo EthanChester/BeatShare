@@ -5,8 +5,11 @@
     <%- include('../includes/navbar.ejs') %>
     <%- include('../includes/audio_player.ejs') %>
     <div class="mainContent">
-        <h1>Add Song</h1>
+        <h1><%= album.title %></h1>
+        <img src="../../uploads/<%= album.image %>" alt="<%= album.title %>" type="<%= album.type %>" width="200px" id="addSongReleaseImage">
+        <h2>Add Song</h2>
         <form action="/profile/post-song" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="albumId" id="albumId" value="<%= album.id %>">
             <input type="text" name="title" id="title">
             <input type="file" name="file" id="file">
             <button type="submit">Submit</button>

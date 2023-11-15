@@ -9,7 +9,15 @@ const Album = sequelize.define('album', {
         allowNull: false,
         primaryKey: true
     },
-    imageURL: {
+    title: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    image: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    imageType: {
         type: Sequelize.STRING,
         allowNull: false
     }

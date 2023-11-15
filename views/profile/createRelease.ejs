@@ -1,0 +1,16 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navbar.ejs') %>
+    <%- include('../includes/audio_player.ejs') %>
+    <div class="mainContent">
+        <h1>Create Release</h1>
+        <form action="/profile/post-release" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" id="title">
+            <input type="file" name="image" id="image">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+<%- include('../includes/footer.ejs') %>
